@@ -15,29 +15,29 @@ public final class ProtobufOuter {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
-   * Protobuf enum {@code LetterType}
+   * Protobuf enum {@code MessageType}
    */
-  public enum LetterType
+  public enum MessageType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>USER_MESSAGE = 0;</code>
+     * <code>UserSendRequestType = 0;</code>
      */
-    USER_MESSAGE(0),
+    UserSendRequestType(0),
     /**
-     * <code>NODE_MESSAGE = 1;</code>
+     * <code>UserSendResponseType = 1;</code>
      */
-    NODE_MESSAGE(1),
+    UserSendResponseType(1),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>USER_MESSAGE = 0;</code>
+     * <code>UserSendRequestType = 0;</code>
      */
-    public static final int USER_MESSAGE_VALUE = 0;
+    public static final int UserSendRequestType_VALUE = 0;
     /**
-     * <code>NODE_MESSAGE = 1;</code>
+     * <code>UserSendResponseType = 1;</code>
      */
-    public static final int NODE_MESSAGE_VALUE = 1;
+    public static final int UserSendResponseType_VALUE = 1;
 
 
     public final int getNumber() {
@@ -54,7 +54,7 @@ public final class ProtobufOuter {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static LetterType valueOf(int value) {
+    public static MessageType valueOf(int value) {
       return forNumber(value);
     }
 
@@ -62,23 +62,23 @@ public final class ProtobufOuter {
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static LetterType forNumber(int value) {
+    public static MessageType forNumber(int value) {
       switch (value) {
-        case 0: return USER_MESSAGE;
-        case 1: return NODE_MESSAGE;
+        case 0: return UserSendRequestType;
+        case 1: return UserSendResponseType;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<LetterType>
+    public static com.google.protobuf.Internal.EnumLiteMap<MessageType>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        LetterType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<LetterType>() {
-            public LetterType findValueByNumber(int number) {
-              return LetterType.forNumber(number);
+        MessageType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<MessageType>() {
+            public MessageType findValueByNumber(int number) {
+              return MessageType.forNumber(number);
             }
           };
 
@@ -95,9 +95,9 @@ public final class ProtobufOuter {
       return org.example.nettyDemo.Common.Proto.ProtobufOuter.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final LetterType[] VALUES = values();
+    private static final MessageType[] VALUES = values();
 
-    public static LetterType valueOf(
+    public static MessageType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -111,15 +111,15 @@ public final class ProtobufOuter {
 
     private final int value;
 
-    private LetterType(int value) {
+    private MessageType(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:LetterType)
+    // @@protoc_insertion_point(enum_scope:MessageType)
   }
 
-  public interface UserMessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:UserMessage)
+  public interface UserSendRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:UserSendRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -129,15 +129,15 @@ public final class ProtobufOuter {
     int getLetterId();
 
     /**
-     * <code>.UserMessage.payload_type type = 2;</code>
+     * <code>.UserSendRequest.payload_type type = 2;</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
-     * <code>.UserMessage.payload_type type = 2;</code>
+     * <code>.UserSendRequest.payload_type type = 2;</code>
      * @return The type.
      */
-    org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type getType();
+    org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type getType();
 
     /**
      * <pre>
@@ -150,18 +150,18 @@ public final class ProtobufOuter {
     com.google.protobuf.ByteString getData();
   }
   /**
-   * Protobuf type {@code UserMessage}
+   * Protobuf type {@code UserSendRequest}
    */
-  public  static final class UserMessage extends
+  public  static final class UserSendRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:UserMessage)
-      UserMessageOrBuilder {
+      // @@protoc_insertion_point(message_implements:UserSendRequest)
+      UserSendRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UserMessage.newBuilder() to construct.
-    private UserMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UserSendRequest.newBuilder() to construct.
+    private UserSendRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UserMessage() {
+    private UserSendRequest() {
       type_ = 0;
       data_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -170,7 +170,7 @@ public final class ProtobufOuter {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UserMessage();
+      return new UserSendRequest();
     }
 
     @java.lang.Override
@@ -178,7 +178,7 @@ public final class ProtobufOuter {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UserMessage(
+    private UserSendRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -233,19 +233,19 @@ public final class ProtobufOuter {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserMessage_descriptor;
+      return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserSendRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserMessage_fieldAccessorTable
+      return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserSendRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.class, org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.Builder.class);
+              org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.class, org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.Builder.class);
     }
 
     /**
-     * Protobuf enum {@code UserMessage.payload_type}
+     * Protobuf enum {@code UserSendRequest.payload_type}
      */
     public enum payload_type
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -339,7 +339,7 @@ public final class ProtobufOuter {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.getDescriptor().getEnumTypes().get(0);
+        return org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final payload_type[] VALUES = values();
@@ -362,7 +362,7 @@ public final class ProtobufOuter {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:UserMessage.payload_type)
+      // @@protoc_insertion_point(enum_scope:UserSendRequest.payload_type)
     }
 
     public static final int LETTER_ID_FIELD_NUMBER = 1;
@@ -378,20 +378,20 @@ public final class ProtobufOuter {
     public static final int TYPE_FIELD_NUMBER = 2;
     private int type_;
     /**
-     * <code>.UserMessage.payload_type type = 2;</code>
+     * <code>.UserSendRequest.payload_type type = 2;</code>
      * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>.UserMessage.payload_type type = 2;</code>
+     * <code>.UserSendRequest.payload_type type = 2;</code>
      * @return The type.
      */
-    public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type getType() {
+    public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type getType() {
       @SuppressWarnings("deprecation")
-      org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type result = org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type.valueOf(type_);
-      return result == null ? org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type.UNRECOGNIZED : result;
+      org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type result = org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type.valueOf(type_);
+      return result == null ? org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type.UNRECOGNIZED : result;
     }
 
     public static final int DATA_FIELD_NUMBER = 3;
@@ -425,7 +425,7 @@ public final class ProtobufOuter {
       if (letterId_ != 0) {
         output.writeInt32(1, letterId_);
       }
-      if (type_ != org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type.Text.getNumber()) {
+      if (type_ != org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type.Text.getNumber()) {
         output.writeEnum(2, type_);
       }
       if (!data_.isEmpty()) {
@@ -444,7 +444,7 @@ public final class ProtobufOuter {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, letterId_);
       }
-      if (type_ != org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type.Text.getNumber()) {
+      if (type_ != org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type.Text.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, type_);
       }
@@ -462,10 +462,10 @@ public final class ProtobufOuter {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage)) {
+      if (!(obj instanceof org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest)) {
         return super.equals(obj);
       }
-      org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage other = (org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage) obj;
+      org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest other = (org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest) obj;
 
       if (getLetterId()
           != other.getLetterId()) return false;
@@ -494,69 +494,69 @@ public final class ProtobufOuter {
       return hash;
     }
 
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseFrom(byte[] data)
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseFrom(java.io.InputStream input)
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseDelimitedFrom(java.io.InputStream input)
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseDelimitedFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -569,7 +569,7 @@ public final class ProtobufOuter {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage prototype) {
+    public static Builder newBuilder(org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -585,26 +585,26 @@ public final class ProtobufOuter {
       return builder;
     }
     /**
-     * Protobuf type {@code UserMessage}
+     * Protobuf type {@code UserSendRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:UserMessage)
-        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessageOrBuilder {
+        // @@protoc_insertion_point(builder_implements:UserSendRequest)
+        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserMessage_descriptor;
+        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserSendRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserMessage_fieldAccessorTable
+        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserSendRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.class, org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.Builder.class);
+                org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.class, org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.Builder.class);
       }
 
-      // Construct using org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.newBuilder()
+      // Construct using org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -634,17 +634,17 @@ public final class ProtobufOuter {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserMessage_descriptor;
+        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserSendRequest_descriptor;
       }
 
       @java.lang.Override
-      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage getDefaultInstanceForType() {
-        return org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.getDefaultInstance();
+      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest getDefaultInstanceForType() {
+        return org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage build() {
-        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage result = buildPartial();
+      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest build() {
+        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -652,8 +652,8 @@ public final class ProtobufOuter {
       }
 
       @java.lang.Override
-      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage buildPartial() {
-        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage result = new org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage(this);
+      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest buildPartial() {
+        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest result = new org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest(this);
         result.letterId_ = letterId_;
         result.type_ = type_;
         result.data_ = data_;
@@ -695,16 +695,16 @@ public final class ProtobufOuter {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage) {
-          return mergeFrom((org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage)other);
+        if (other instanceof org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest) {
+          return mergeFrom((org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage other) {
-        if (other == org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest other) {
+        if (other == org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.getDefaultInstance()) return this;
         if (other.getLetterId() != 0) {
           setLetterId(other.getLetterId());
         }
@@ -729,11 +729,11 @@ public final class ProtobufOuter {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage parsedMessage = null;
+        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage) e.getUnfinishedMessage();
+          parsedMessage = (org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -775,14 +775,14 @@ public final class ProtobufOuter {
 
       private int type_ = 0;
       /**
-       * <code>.UserMessage.payload_type type = 2;</code>
+       * <code>.UserSendRequest.payload_type type = 2;</code>
        * @return The enum numeric value on the wire for type.
        */
       public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>.UserMessage.payload_type type = 2;</code>
+       * <code>.UserSendRequest.payload_type type = 2;</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -792,20 +792,20 @@ public final class ProtobufOuter {
         return this;
       }
       /**
-       * <code>.UserMessage.payload_type type = 2;</code>
+       * <code>.UserSendRequest.payload_type type = 2;</code>
        * @return The type.
        */
-      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type getType() {
+      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type getType() {
         @SuppressWarnings("deprecation")
-        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type result = org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type.valueOf(type_);
-        return result == null ? org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type.UNRECOGNIZED : result;
+        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type result = org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type.valueOf(type_);
+        return result == null ? org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type.UNRECOGNIZED : result;
       }
       /**
-       * <code>.UserMessage.payload_type type = 2;</code>
+       * <code>.UserSendRequest.payload_type type = 2;</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setType(org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage.payload_type value) {
+      public Builder setType(org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest.payload_type value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -815,7 +815,7 @@ public final class ProtobufOuter {
         return this;
       }
       /**
-       * <code>.UserMessage.payload_type type = 2;</code>
+       * <code>.UserSendRequest.payload_type type = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -882,48 +882,48 @@ public final class ProtobufOuter {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:UserMessage)
+      // @@protoc_insertion_point(builder_scope:UserSendRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:UserMessage)
-    private static final org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:UserSendRequest)
+    private static final org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage();
+      DEFAULT_INSTANCE = new org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest();
     }
 
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage getDefaultInstance() {
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserMessage>
-        PARSER = new com.google.protobuf.AbstractParser<UserMessage>() {
+    private static final com.google.protobuf.Parser<UserSendRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UserSendRequest>() {
       @java.lang.Override
-      public UserMessage parsePartialFrom(
+      public UserSendRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UserMessage(input, extensionRegistry);
+        return new UserSendRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UserMessage> parser() {
+    public static com.google.protobuf.Parser<UserSendRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserMessage> getParserForType() {
+    public com.google.protobuf.Parser<UserSendRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserMessage getDefaultInstanceForType() {
+    public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Response)
+  public interface UserSendResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:UserSendResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -933,15 +933,15 @@ public final class ProtobufOuter {
     int getLetterId();
 
     /**
-     * <code>.Response.mq_error error = 2;</code>
+     * <code>.UserSendResponse.mq_error error = 2;</code>
      * @return The enum numeric value on the wire for error.
      */
     int getErrorValue();
     /**
-     * <code>.Response.mq_error error = 2;</code>
+     * <code>.UserSendResponse.mq_error error = 2;</code>
      * @return The error.
      */
-    org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error getError();
+    org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error getError();
 
     /**
      * <code>string error_message = 3;</code>
@@ -956,18 +956,18 @@ public final class ProtobufOuter {
         getErrorMessageBytes();
   }
   /**
-   * Protobuf type {@code Response}
+   * Protobuf type {@code UserSendResponse}
    */
-  public  static final class Response extends
+  public  static final class UserSendResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Response)
-      ResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:UserSendResponse)
+      UserSendResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Response.newBuilder() to construct.
-    private Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UserSendResponse.newBuilder() to construct.
+    private UserSendResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Response() {
+    private UserSendResponse() {
       error_ = 0;
       errorMessage_ = "";
     }
@@ -976,7 +976,7 @@ public final class ProtobufOuter {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new Response();
+      return new UserSendResponse();
     }
 
     @java.lang.Override
@@ -984,7 +984,7 @@ public final class ProtobufOuter {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Response(
+    private UserSendResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1040,19 +1040,19 @@ public final class ProtobufOuter {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_Response_descriptor;
+      return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserSendResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_Response_fieldAccessorTable
+      return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserSendResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.class, org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.Builder.class);
+              org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.class, org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.Builder.class);
     }
 
     /**
-     * Protobuf enum {@code Response.mq_error}
+     * Protobuf enum {@code UserSendResponse.mq_error}
      */
     public enum mq_error
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -1129,7 +1129,7 @@ public final class ProtobufOuter {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.getDescriptor().getEnumTypes().get(0);
+        return org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final mq_error[] VALUES = values();
@@ -1152,7 +1152,7 @@ public final class ProtobufOuter {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Response.mq_error)
+      // @@protoc_insertion_point(enum_scope:UserSendResponse.mq_error)
     }
 
     public static final int LETTER_ID_FIELD_NUMBER = 1;
@@ -1168,20 +1168,20 @@ public final class ProtobufOuter {
     public static final int ERROR_FIELD_NUMBER = 2;
     private int error_;
     /**
-     * <code>.Response.mq_error error = 2;</code>
+     * <code>.UserSendResponse.mq_error error = 2;</code>
      * @return The enum numeric value on the wire for error.
      */
     public int getErrorValue() {
       return error_;
     }
     /**
-     * <code>.Response.mq_error error = 2;</code>
+     * <code>.UserSendResponse.mq_error error = 2;</code>
      * @return The error.
      */
-    public org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error getError() {
+    public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error getError() {
       @SuppressWarnings("deprecation")
-      org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error result = org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error.valueOf(error_);
-      return result == null ? org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error.UNRECOGNIZED : result;
+      org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error result = org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error.valueOf(error_);
+      return result == null ? org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error.UNRECOGNIZED : result;
     }
 
     public static final int ERROR_MESSAGE_FIELD_NUMBER = 3;
@@ -1237,7 +1237,7 @@ public final class ProtobufOuter {
       if (letterId_ != 0) {
         output.writeInt32(1, letterId_);
       }
-      if (error_ != org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error.OK.getNumber()) {
+      if (error_ != org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error.OK.getNumber()) {
         output.writeEnum(2, error_);
       }
       if (!getErrorMessageBytes().isEmpty()) {
@@ -1256,7 +1256,7 @@ public final class ProtobufOuter {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, letterId_);
       }
-      if (error_ != org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error.OK.getNumber()) {
+      if (error_ != org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error.OK.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, error_);
       }
@@ -1273,10 +1273,10 @@ public final class ProtobufOuter {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.example.nettyDemo.Common.Proto.ProtobufOuter.Response)) {
+      if (!(obj instanceof org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse)) {
         return super.equals(obj);
       }
-      org.example.nettyDemo.Common.Proto.ProtobufOuter.Response other = (org.example.nettyDemo.Common.Proto.ProtobufOuter.Response) obj;
+      org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse other = (org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse) obj;
 
       if (getLetterId()
           != other.getLetterId()) return false;
@@ -1305,69 +1305,69 @@ public final class ProtobufOuter {
       return hash;
     }
 
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseFrom(byte[] data)
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseFrom(java.io.InputStream input)
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseDelimitedFrom(java.io.InputStream input)
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseDelimitedFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parseFrom(
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1380,7 +1380,7 @@ public final class ProtobufOuter {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.example.nettyDemo.Common.Proto.ProtobufOuter.Response prototype) {
+    public static Builder newBuilder(org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1396,26 +1396,26 @@ public final class ProtobufOuter {
       return builder;
     }
     /**
-     * Protobuf type {@code Response}
+     * Protobuf type {@code UserSendResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Response)
-        org.example.nettyDemo.Common.Proto.ProtobufOuter.ResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:UserSendResponse)
+        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_Response_descriptor;
+        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserSendResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_Response_fieldAccessorTable
+        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserSendResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.class, org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.Builder.class);
+                org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.class, org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.Builder.class);
       }
 
-      // Construct using org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.newBuilder()
+      // Construct using org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1445,17 +1445,17 @@ public final class ProtobufOuter {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_Response_descriptor;
+        return org.example.nettyDemo.Common.Proto.ProtobufOuter.internal_static_UserSendResponse_descriptor;
       }
 
       @java.lang.Override
-      public org.example.nettyDemo.Common.Proto.ProtobufOuter.Response getDefaultInstanceForType() {
-        return org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.getDefaultInstance();
+      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse getDefaultInstanceForType() {
+        return org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.example.nettyDemo.Common.Proto.ProtobufOuter.Response build() {
-        org.example.nettyDemo.Common.Proto.ProtobufOuter.Response result = buildPartial();
+      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse build() {
+        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1463,8 +1463,8 @@ public final class ProtobufOuter {
       }
 
       @java.lang.Override
-      public org.example.nettyDemo.Common.Proto.ProtobufOuter.Response buildPartial() {
-        org.example.nettyDemo.Common.Proto.ProtobufOuter.Response result = new org.example.nettyDemo.Common.Proto.ProtobufOuter.Response(this);
+      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse buildPartial() {
+        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse result = new org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse(this);
         result.letterId_ = letterId_;
         result.error_ = error_;
         result.errorMessage_ = errorMessage_;
@@ -1506,16 +1506,16 @@ public final class ProtobufOuter {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.example.nettyDemo.Common.Proto.ProtobufOuter.Response) {
-          return mergeFrom((org.example.nettyDemo.Common.Proto.ProtobufOuter.Response)other);
+        if (other instanceof org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse) {
+          return mergeFrom((org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.example.nettyDemo.Common.Proto.ProtobufOuter.Response other) {
-        if (other == org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse other) {
+        if (other == org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.getDefaultInstance()) return this;
         if (other.getLetterId() != 0) {
           setLetterId(other.getLetterId());
         }
@@ -1541,11 +1541,11 @@ public final class ProtobufOuter {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.example.nettyDemo.Common.Proto.ProtobufOuter.Response parsedMessage = null;
+        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.example.nettyDemo.Common.Proto.ProtobufOuter.Response) e.getUnfinishedMessage();
+          parsedMessage = (org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1587,14 +1587,14 @@ public final class ProtobufOuter {
 
       private int error_ = 0;
       /**
-       * <code>.Response.mq_error error = 2;</code>
+       * <code>.UserSendResponse.mq_error error = 2;</code>
        * @return The enum numeric value on the wire for error.
        */
       public int getErrorValue() {
         return error_;
       }
       /**
-       * <code>.Response.mq_error error = 2;</code>
+       * <code>.UserSendResponse.mq_error error = 2;</code>
        * @param value The enum numeric value on the wire for error to set.
        * @return This builder for chaining.
        */
@@ -1604,20 +1604,20 @@ public final class ProtobufOuter {
         return this;
       }
       /**
-       * <code>.Response.mq_error error = 2;</code>
+       * <code>.UserSendResponse.mq_error error = 2;</code>
        * @return The error.
        */
-      public org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error getError() {
+      public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error getError() {
         @SuppressWarnings("deprecation")
-        org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error result = org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error.valueOf(error_);
-        return result == null ? org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error.UNRECOGNIZED : result;
+        org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error result = org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error.valueOf(error_);
+        return result == null ? org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error.UNRECOGNIZED : result;
       }
       /**
-       * <code>.Response.mq_error error = 2;</code>
+       * <code>.UserSendResponse.mq_error error = 2;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
-      public Builder setError(org.example.nettyDemo.Common.Proto.ProtobufOuter.Response.mq_error value) {
+      public Builder setError(org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse.mq_error value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1627,7 +1627,7 @@ public final class ProtobufOuter {
         return this;
       }
       /**
-       * <code>.Response.mq_error error = 2;</code>
+       * <code>.UserSendResponse.mq_error error = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -1725,56 +1725,56 @@ public final class ProtobufOuter {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Response)
+      // @@protoc_insertion_point(builder_scope:UserSendResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:Response)
-    private static final org.example.nettyDemo.Common.Proto.ProtobufOuter.Response DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:UserSendResponse)
+    private static final org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.example.nettyDemo.Common.Proto.ProtobufOuter.Response();
+      DEFAULT_INSTANCE = new org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse();
     }
 
-    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.Response getDefaultInstance() {
+    public static org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Response>
-        PARSER = new com.google.protobuf.AbstractParser<Response>() {
+    private static final com.google.protobuf.Parser<UserSendResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UserSendResponse>() {
       @java.lang.Override
-      public Response parsePartialFrom(
+      public UserSendResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Response(input, extensionRegistry);
+        return new UserSendResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Response> parser() {
+    public static com.google.protobuf.Parser<UserSendResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Response> getParserForType() {
+    public com.google.protobuf.Parser<UserSendResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.example.nettyDemo.Common.Proto.ProtobufOuter.Response getDefaultInstanceForType() {
+    public org.example.nettyDemo.Common.Proto.ProtobufOuter.UserSendResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_UserMessage_descriptor;
+    internal_static_UserSendRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_UserMessage_fieldAccessorTable;
+      internal_static_UserSendRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Response_descriptor;
+    internal_static_UserSendResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Response_fieldAccessorTable;
+      internal_static_UserSendResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1784,15 +1784,16 @@ public final class ProtobufOuter {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023proto/message.proto\"\212\001\n\013UserMessage\022\021\n" +
-      "\tletter_id\030\001 \001(\005\022\'\n\004type\030\002 \001(\0162\031.UserMes" +
-      "sage.payload_type\022\014\n\004data\030\003 \001(\014\"1\n\014paylo" +
-      "ad_type\022\010\n\004Text\020\000\022\n\n\006Binary\020\001\022\013\n\007Integer" +
-      "\020\002\"\204\001\n\010Response\022\021\n\tletter_id\030\001 \001(\005\022!\n\005er" +
-      "ror\030\002 \001(\0162\022.Response.mq_error\022\025\n\rerror_m" +
-      "essage\030\003 \001(\t\"+\n\010mq_error\022\006\n\002OK\020\000\022\027\n\023Inte" +
-      "rnalServerError\020\001*0\n\nLetterType\022\020\n\014USER_" +
-      "MESSAGE\020\000\022\020\n\014NODE_MESSAGE\020\001B3\n\"org.examp" +
+      "\n\023proto/message.proto\"\222\001\n\017UserSendReques" +
+      "t\022\021\n\tletter_id\030\001 \001(\005\022+\n\004type\030\002 \001(\0162\035.Use" +
+      "rSendRequest.payload_type\022\014\n\004data\030\003 \001(\014\"" +
+      "1\n\014payload_type\022\010\n\004Text\020\000\022\n\n\006Binary\020\001\022\013\n" +
+      "\007Integer\020\002\"\224\001\n\020UserSendResponse\022\021\n\tlette" +
+      "r_id\030\001 \001(\005\022)\n\005error\030\002 \001(\0162\032.UserSendResp" +
+      "onse.mq_error\022\025\n\rerror_message\030\003 \001(\t\"+\n\010" +
+      "mq_error\022\006\n\002OK\020\000\022\027\n\023InternalServerError\020" +
+      "\001*@\n\013MessageType\022\027\n\023UserSendRequestType\020" +
+      "\000\022\030\n\024UserSendResponseType\020\001B3\n\"org.examp" +
       "le.nettyDemo.Common.ProtoB\rProtobufOuter" +
       "b\006proto3"
     };
@@ -1800,17 +1801,17 @@ public final class ProtobufOuter {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_UserMessage_descriptor =
+    internal_static_UserSendRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_UserMessage_fieldAccessorTable = new
+    internal_static_UserSendRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_UserMessage_descriptor,
+        internal_static_UserSendRequest_descriptor,
         new java.lang.String[] { "LetterId", "Type", "Data", });
-    internal_static_Response_descriptor =
+    internal_static_UserSendResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_Response_fieldAccessorTable = new
+    internal_static_UserSendResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Response_descriptor,
+        internal_static_UserSendResponse_descriptor,
         new java.lang.String[] { "LetterId", "Error", "ErrorMessage", });
   }
 

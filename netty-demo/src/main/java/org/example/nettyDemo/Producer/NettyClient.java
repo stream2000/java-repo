@@ -33,9 +33,9 @@ public void run() throws Exception {
         System.out.println(channel.remoteAddress());
         for (int i = 0; i < 10; i++) {
             System.out.println("sent the message with id "+i);
-            ProtobufOuter.UserMessage letter = ProtobufOuter.UserMessage.newBuilder()
+            ProtobufOuter.UserSendRequest letter = ProtobufOuter.UserSendRequest.newBuilder()
                     .setLetterId(i)
-                    .setType(ProtobufOuter.UserMessage.payload_type.Text)
+                    .setType(ProtobufOuter.UserSendRequest.payload_type.Text)
                     .setData(ByteString.copyFromUtf8("hello world"))
                     .build();
             channel.writeAndFlush(letter);

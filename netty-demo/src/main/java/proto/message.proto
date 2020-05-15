@@ -3,12 +3,12 @@ syntax = "proto3";
 option java_package = "org.example.nettyDemo.Common.Proto";     // 指定包名
 option java_outer_classname = "ProtobufOuter"; // 指定类名
 
-enum LetterType{
-    USER_MESSAGE = 0;
-    NODE_MESSAGE = 1;
+enum MessageType{
+    UserSendRequestType = 0;
+    UserSendResponseType = 1;
 }
 
-message UserMessage{
+message UserSendRequest{
    int32 letter_id = 1;
    enum payload_type {
        Text = 0;      // 每个枚举类型必须将其第一个类型映射为 0 作为默认值
@@ -20,7 +20,7 @@ message UserMessage{
    // other metadata
 }
 
-message Response{
+message UserSendResponse{
     int32 letter_id = 1;
     enum mq_error{
         OK = 0;
@@ -29,3 +29,4 @@ message Response{
     mq_error error = 2;
     string error_message = 3;
 }
+

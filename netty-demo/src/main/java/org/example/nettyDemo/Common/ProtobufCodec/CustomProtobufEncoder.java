@@ -5,8 +5,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
-
-import java.util.Map;
+import org.example.nettyDemo.Common.ProtoRouter.ProtoRouter;
 
 /**
  * 参考ProtobufVarint32LengthFieldPrepender 和 ProtobufEncoder
@@ -14,10 +13,9 @@ import java.util.Map;
 @Sharable
 public class CustomProtobufEncoder extends MessageToByteEncoder<MessageLite> {
 
-private static Map<Class, Byte> messageMap;
-
-public CustomProtobufEncoder(Map<Class, Byte> map) {
-    messageMap = map;
+private ProtoRouter router;
+public CustomProtobufEncoder(ProtoRouter router) {
+    this.router = router;
 }
 
 @Override
@@ -31,7 +29,7 @@ protected void encode(
 }
 
 private byte[] encodeHeader(MessageLite msg, short bodyLength) {
-    Byte messageType= messageMap.get(msg.getClass());
+    Byte messageType= router.getMessageTypeMap().get(msg.getClass());
     // TODO check when type = 0
     byte[] header = new byte[4];
     header[0] = (byte) (bodyLength & 0xff);

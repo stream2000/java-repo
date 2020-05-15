@@ -1,24 +1,23 @@
 package org.example.nettyDemo.Common.ProtobufCodec;
 
-import com.google.protobuf.GeneratedMessageV3;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 
 import java.util.List;
-import java.util.Map;
 
 import com.google.protobuf.MessageLite;
+import org.example.nettyDemo.Common.ProtoRouter.ProtoRouter;
 
 /**
  * 参考ProtobufVarint32FrameDecoder 和 ProtobufDecoder
  */
 
 public class CustomProtobufDecoder extends ByteToMessageDecoder {
-private static Map<Byte, com.google.protobuf.GeneratedMessageV3> messageMap;
+private ProtoRouter router;
 
-public CustomProtobufDecoder(Map<Byte, com.google.protobuf.GeneratedMessageV3> map) {
-    messageMap = map;
+public CustomProtobufDecoder(ProtoRouter router) {
+    this.router = router;
 }
 
 @Override
@@ -67,7 +66,7 @@ protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) t
 }
 
 public MessageLite decodeBody(byte dataType, byte[] array, int offset, int length) throws Exception {
-    return messageMap.get(dataType).getDefaultInstanceForType().
-             getParserForType().parseFrom(array, offset, length); // or throw exception
+    return router.getTypeMessageMap().get(dataType).getDefaultInstanceForType().
+            getParserForType().parseFrom(array, offset, length); // or throw exception
 }
 }
