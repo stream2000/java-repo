@@ -10,19 +10,6 @@ import java.util.concurrent.*;
 public class UserMessageHandler implements Handler {
 private final static ExecutorService workerThreadService = newBlockingExecutorsUseCallerRun(Runtime.getRuntime().availableProcessors() * 2);
 
-public static ExecutorService newBlockingExecutorsUseCallerRun(int size) {
-    return new ThreadPoolExecutor(size, size, 0L, TimeUnit.MILLISECONDS, new SynchronousQueue<Runnable>(),
-            new RejectedExecutionHandler() {
-                @Override
-                public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
-                    try {
-                        executor.getQueue().put(r);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            });
-}
 
 @Override
 public void handle(ChannelHandlerContext ctx, GeneratedMessageV3 msg) throws Exception {
@@ -41,5 +28,19 @@ public void handle(ChannelHandlerContext ctx, GeneratedMessageV3 msg) throws Exc
         // something like async write?
         ctx.writeAndFlush(resp);
     });
+}
+
+public static ExecutorService newBlockingExecutorsUseCallerRun(int size) {
+    return new ThreadPoolExecutor(size, size, 0L, TimeUnit.MILLISECONDS, new SynchronousQueue<Runnable>(),
+            new RejectedExecutionHandler() {
+                @Override
+                public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+                    try {
+                        executor.getQueue().put(r);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
 }
 }
